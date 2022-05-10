@@ -6,7 +6,7 @@
   <link href="http://example.com/atom.xml" rel="self"/>
   
   <link href="http://example.com/"/>
-  <updated>2022-05-09T19:25:46.580Z</updated>
+  <updated>2022-05-10T13:19:22.745Z</updated>
   <id>http://example.com/</id>
   
   <author>
@@ -21,20 +21,24 @@
     <link href="http://example.com/2022/05/10/World/"/>
     <id>http://example.com/2022/05/10/World/</id>
     <published>2022-05-09T18:57:50.000Z</published>
-    <updated>2022-05-09T19:25:46.580Z</updated>
+    <updated>2022-05-10T13:19:22.745Z</updated>
     
-    <content type="html"><![CDATA[<h2 id="Holle-wrold"><a href="#Holle-wrold" class="headerlink" title="Holle wrold"></a>Holle wrold</h2><p>这个是我的第一遍文章</p><p>:&gt;</p><p>我的GitHub<a href="https://github.com/XKLibra">XKLibra</a></p><p>我的serWEB<a href="www.svannu-msco-mto-l1.cloud">MSKNET</a></p><p><img src="https://cdn.jsdelivr.net/gh/XKLibra/image@main/source/images/thumb/98073480_p1.png"><br>Pixiv<em><a href="https://www.pixiv.net/artworks/98073480">垂耳兔兔!</a>-<a href="https://www.pixiv.net/users/77917133">漫漫漫游海洋的泡沫</a></em></p>]]></content>
+    <content type="html"><![CDATA[<h2 id="Holle-wrold"><a href="#Holle-wrold" class="headerlink" title="Holle wrold"></a>Holle wrold</h2><p>这个是我的第一遍文章<del>啊啊啊啊啊啊不想写的，kuku</del></p><p>这是我的新开始，也是我的新章节。</p><p>:&gt;</p><p>我的GitHub<a href="https://github.com/XKLibra">XKLibra</a></p><p>我的serWEB<a href="www.svannu-msco-mto-l1.cloud">MSKNET</a></p><hr><p>2022-5-10</p><hr><div class="xControl">    <div class="xHeading"><div class="xIcon"><i class="fa fa-plus"></i></div><span>≧ ﹏ ≦</span></div>    <div class="xContent"><div class="inner">        <p><img src="https://cdn.jsdelivr.net/gh/XKLibra/image@main/source/images/thumb/98073480_p1.png"><br>Pixiv<em><a href="https://www.pixiv.net/artworks/98073480">垂耳兔兔!</a>-<a href="https://www.pixiv.net/users/77917133">漫漫漫游海洋的泡沫</a></em></p>     </div></div>    </div>]]></content>
     
     
       
       
-    <summary type="html">&lt;h2 id=&quot;Holle-wrold&quot;&gt;&lt;a href=&quot;#Holle-wrold&quot; class=&quot;headerlink&quot; title=&quot;Holle wrold&quot;&gt;&lt;/a&gt;Holle wrold&lt;/h2&gt;&lt;p&gt;这个是我的第一遍文章&lt;/p&gt;
-&lt;p&gt;:&amp;gt;&lt;/p&gt;
-&lt;p&gt;我的G</summary>
+    <summary type="html">&lt;h2 id=&quot;Holle-wrold&quot;&gt;&lt;a href=&quot;#Holle-wrold&quot; class=&quot;headerlink&quot; title=&quot;Holle wrold&quot;&gt;&lt;/a&gt;Holle wrold&lt;/h2&gt;&lt;p&gt;这个是我的第一遍文章&lt;del&gt;啊啊啊啊啊啊不想写的，kuku&lt;/de</summary>
       
     
     
     
+    <category term="日常" scheme="http://example.com/categories/%E6%97%A5%E5%B8%B8/"/>
+    
+    
+    <category term="NEW WROLD" scheme="http://example.com/tags/NEW-WROLD/"/>
+    
+    <category term="日常" scheme="http://example.com/tags/%E6%97%A5%E5%B8%B8/"/>
     
   </entry>
   
